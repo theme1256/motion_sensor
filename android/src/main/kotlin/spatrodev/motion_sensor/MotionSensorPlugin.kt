@@ -13,7 +13,6 @@ import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
-import io.flutter.plugin.common.PluginRegistry.Registrar
 
 // translate from https://github.com/flutter/plugins/tree/master/packages/sensor
 /** MotionSensorPlugin */
@@ -48,9 +47,9 @@ public class MotionSensorPlugin : FlutterPlugin, MethodChannel.MethodCallHandler
 
   companion object {
     @JvmStatic
-    fun registerWith(registrar: Registrar) {
+    fun registerWith() {
       val plugin = MotionSensorPlugin()
-      plugin.setupEventChannels(registrar.context(), registrar.messenger())
+      plugin.setupEventChannels()
     }
   }
 
