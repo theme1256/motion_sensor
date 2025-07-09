@@ -45,14 +45,6 @@ public class MotionSensorPlugin : FlutterPlugin, MethodChannel.MethodCallHandler
   private var absoluteOrientationStreamHandler: RotationVectorStreamHandler? = null
   private var screenOrientationStreamHandler: ScreenOrientationStreamHandler? = null
 
-  companion object {
-    @JvmStatic
-    fun registerWith() {
-      val plugin = MotionSensorPlugin()
-      plugin.setupEventChannels()
-    }
-  }
-
   override fun onAttachedToEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
     val context = binding.applicationContext
     setupEventChannels(context, binding.binaryMessenger)
